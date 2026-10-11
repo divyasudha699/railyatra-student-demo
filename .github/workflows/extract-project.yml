@@ -1,0 +1,39 @@
+name: Extract RailYatra project
+
+on:
+  push:
+    paths:
+      - RailYatra_Public_Deploy_Ready.zip
+      - .github/workflows/extract-project.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Extract the uploaded project
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/railyatra-extract
+          unzip -oq RailYatra_Public_Deploy_Ready.zip -d /tmp/railyatra-extract
+          cp -a /tmp/railyatra-extract/RailYatra_Public_Deploy_Ready/. .
+          test -f Dockerfile
+          test -f pom.xml
+          test -f render.yaml
+          test -f src/main/java/railway/Main.java
+      - name: Commit extracted website files
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Unpack RailYatra source and deployment files"
+            git push
+          fi
