@@ -1,0 +1,7 @@
+target/
+data/
+tickets/
+*.log
+*.tmp
+.idea/
+.vscode/

@@ -1,0 +1,6 @@
+target
+.git
+data
+*.bin
+*.tmp
+tickets

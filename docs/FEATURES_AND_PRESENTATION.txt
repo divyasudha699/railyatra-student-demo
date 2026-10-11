@@ -1,0 +1,54 @@
+RAILYATRA — PROJECT DEMONSTRATION / VIVA GUIDE
+
+INTRODUCTION
+RailYatra is an educational responsive train and flight reservation website built with
+HTML/CSS/JavaScript on the frontend and Java 17 on the backend. It uses locally persisted
+sample data to explain a complete booking lifecycle from search to simulated payment,
+ticket generation and cancellation.
+
+FRONTEND
+HTML organizes the navigation, search form, results, booking screens and ticket pages.
+CSS provides the responsive blue-and-white design with an optional dark theme.
+JavaScript handles user interactions and calls Java REST-style API routes using fetch().
+
+BACKEND
+Java's HttpServer processes HTTP requests and sends JSON responses.
+The backend enforces login, input validation, date-specific seat selection,
+price calculations, creation of tickets and cancellation rules.
+Passwords are PBKDF2-hashed and not stored as plain text.
+
+STORAGE
+Demo accounts, train/flight schedules, tickets and feedback are serialized to a local file.
+Tickets keep PNR, payment choice, passenger/seat assignment, status, issue time,
+cancellation time and simulated refund. The server checks seat conflicts.
+
+EXAMPLE WORKFLOW
+1. Registration/login: user enters name, email and password.
+2. Search: select From, To, date and Train or Flight; see sample routes.
+3. Booking: view duration, arrival, departure, remaining seats; enter passenger details.
+4. Seat selection: red booked, green available, blue selected.
+5. Fare: base + 5% mock tax + Rs 19 convenience fee + optional insurance.
+6. Payment: UPI QR, UPI ID, Google Pay, PhonePe, Paytm, Net Banking and Demo Card.
+7. After acknowledging DEMO payment, backend confirms booking and issues a demo PNR.
+8. Ticket view: show status, schedule, passenger names, seat numbers, fare and payment reference.
+9. Cancellation: show warning and estimated demo refund, confirm, store IST timestamp and release seats.
+10. My tickets: confirmed and cancelled tickets remain visible across restarts.
+
+OTHER FEATURES
+- Sample flights mode (no external flight API)
+- Station departure board with simulated delayed/on-time flags
+- Search by train number/name, recent searches and clear history
+- English/Hindi/Telugu/Kannada/Tamil core navigation labels; other offered languages
+  save preference but default to English for core labels
+- Light/dark mode, feedback
+- Admin account: dashboard counts, add train/flight services and enable/disable them
+- Download plain-text demo ticket, print browser ticket
+
+DEMO REFUND RULE
+2+ days before travel -> 90% demo refund
+1 day before travel -> 70% demo refund
+Same day -> 50% demo refund
+After travel date -> cancellation not permitted in this demo
+These percentages are classroom EXAMPLES, not Indian Railways or airlines official rules.
+
+IMPORTANT: NO REAL PAYMENT / NO LIVE DATA / NOT VALID FOR TRAVEL.

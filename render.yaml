@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: railyatra-student-demo
+    runtime: docker
+    plan: free
+    autoDeployTrigger: commit
+    envVars:
+      - key: RAILYATRA_PUBLIC
+        value: "true"

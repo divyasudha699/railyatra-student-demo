@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0d2b59" />
+  <meta name="description" content="RailYatra educational train and flight reservation demo. Local booking and demo payment workflows." />
+  <title>RailYatra — Travel Made Simple</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+ <div id="app">
+  <header class="topbar">
+   <div class="top-inner">
+    <button id="menu-button" class="icon-button menu-button" aria-label="Open menu"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    <button id="home-logo" class="brand" aria-label="RailYatra home"><span class="brand-mark">🚆</span><span><strong>Rail<span>Yatra</span></strong><small>TRAVEL MADE SIMPLE</small></span></button>
+    <nav class="desktop-links"><button data-go="home" class="nav-current" data-nav="home">Explore</button><button data-go="tickets" data-nav="tickets">My tickets</button><button data-go="board" data-nav="board">Station board</button><button data-go="help" data-nav="help">Help</button></nav>
+    <span class="top-demo">● DEMO APPLICATION</span>
+    <div id="auth-pill"></div>
+   </div>
+  </header>
+  <div id="screen"></div>
+  <footer class="footer"><div><b>🚆 RailYatra</b><span>Designed for learning. Built with Java 17 + HTML + CSS + JavaScript.</span></div><p>Educational simulation — no real trains tracked, tickets issued, or payments collected. <a href="/project-document.pdf" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Project document (PDF)</a></p></footer>
+  <div id="drawer-backdrop" class="backdrop hidden"></div><aside id="drawer" class="drawer" aria-label="Navigation menu"></aside>
+  <div id="modal-backdrop" class="modal-backdrop hidden"><section id="modal" class="modal" role="dialog" aria-modal="true"></section></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+ </div>
+ <script src="/app.js" defer></script>
+</body>
+</html>

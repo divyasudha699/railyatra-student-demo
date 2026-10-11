@@ -1,0 +1,18 @@
+TESTS COMPLETED IN THE BUILD ENVIRONMENT
+========================================
+Java source compiled successfully using javac --release 17.
+Frontend JavaScript passed node --check.
+Backend HTTP and static file endpoints returned HTTP 200.
+Verified demo passenger login; wrong password rejected.
+Verified train search and date-specific availability.
+Verified flight search, checkout and sample net-banking completion.
+Verified demo PNR is created and booking is saved.
+Verified seats are held after booking, and released after cancellation.
+Verified IST cancellation timestamp and demo refund details.
+Verified admin login and overview; departure board data.
+
+Visual end-to-end browser screenshot validation could not be performed in this
+container because local Chromium traffic was blocked by the environment, despite
+HTTP API tests succeeding. Please review UI in Chrome / Edge on your laptop.
+
+No real payments, tickets, flight statuses, delay feeds or refunds are available.
